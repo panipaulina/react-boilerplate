@@ -1,6 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-const Index = () => <div>Hello there React</div>
+import configureStore from './store/configureStore';
 
-ReactDOM.render(<Index />, document.getElementById('index'));
+import { App } from './frames/App';
+
+let store = configureStore(); //eslint-disable-line
+
+ReactDOM.render(
+  (
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  ), document.getElementById('root')
+);
