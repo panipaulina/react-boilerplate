@@ -27,6 +27,7 @@ npm manifest:
     "author": "paulina",
     "license": "ISC",
     "devDependencies": {
+      "autoprefixer": "^8.2.0",
       "babel-core": "^6.26.0",
       "babel-eslint": "^8.2.2",
       "babel-loader": "^7.1.4",
@@ -39,7 +40,7 @@ npm manifest:
       "eslint-plugin-jsx-a11y": "^6.0.3",
       "eslint-plugin-lodash": "^2.7.0",
       "eslint-plugin-react": "^7.7.0",
-      "extract-text-webpack-plugin": "^3.0.2",
+      "extract-text-webpack-plugin": "4.0.0-beta.0",
       "html-webpack-plugin": "^3.2.0",
       "node-sass": "^4.8.3",
       "redux-devtools-extension": "^2.13.2",
@@ -195,7 +196,7 @@ Lockfile:
       co "^4.6.0"
       json-stable-stringify "^1.0.1"
   
-  ajv@^5.0.0, ajv@^5.1.0, ajv@^5.2.3, ajv@^5.3.0:
+  ajv@^5.1.0, ajv@^5.2.3, ajv@^5.3.0:
     version "5.5.2"
     resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.2.tgz#73b5eeca3fab653e3d3f9422b341ad42205dc965"
     dependencies:
@@ -434,6 +435,17 @@ Lockfile:
       normalize-range "^0.1.2"
       num2fraction "^1.2.2"
       postcss "^5.2.16"
+      postcss-value-parser "^3.2.3"
+  
+  autoprefixer@^8.2.0:
+    version "8.2.0"
+    resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-8.2.0.tgz#1e49b611b31a5259b86b7a6b2b1b8faf091abe2a"
+    dependencies:
+      browserslist "^3.2.0"
+      caniuse-lite "^1.0.30000817"
+      normalize-range "^0.1.2"
+      num2fraction "^1.2.2"
+      postcss "^6.0.20"
       postcss-value-parser "^3.2.3"
   
   aws-sign2@~0.6.0:
@@ -1363,6 +1375,13 @@ Lockfile:
       caniuse-lite "^1.0.30000792"
       electron-to-chromium "^1.3.30"
   
+  browserslist@^3.2.0:
+    version "3.2.4"
+    resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-3.2.4.tgz#fb9ad70fd09875137ae943a31ab815ed76896031"
+    dependencies:
+      caniuse-lite "^1.0.30000821"
+      electron-to-chromium "^1.3.41"
+  
   buffer-from@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.0.0.tgz#4cb8832d23612589b0406e9e2956c17f06fdf531"
@@ -1488,7 +1507,7 @@ Lockfile:
     version "1.0.30000823"
     resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000823.tgz#e68e5f8c70783ef4059d2ea0de81f551651da6fc"
   
-  caniuse-lite@^1.0.30000792:
+  caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000817, caniuse-lite@^1.0.30000821:
     version "1.0.30000823"
     resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000823.tgz#b79842a5b5a48eaa416b73f5a5d7a23f52d26014"
   
@@ -2328,7 +2347,7 @@ Lockfile:
     version "2.5.8"
     resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.8.tgz#2ab6954619f225e6193b7ac5f7c39c48fefe4380"
   
-  electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
+  electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.41:
     version "1.3.42"
     resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.42.tgz#95c33bf01d0cc405556aec899fe61fd4d76ea0f9"
   
@@ -2740,14 +2759,14 @@ Lockfile:
       snapdragon "^0.8.1"
       to-regex "^3.0.1"
   
-  extract-text-webpack-plugin@^3.0.2:
-    version "3.0.2"
-    resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-3.0.2.tgz#5f043eaa02f9750a9258b78c0a6e0dc1408fb2f7"
+  extract-text-webpack-plugin@4.0.0-beta.0:
+    version "4.0.0-beta.0"
+    resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-4.0.0-beta.0.tgz#f7361d7ff430b42961f8d1321ba8c1757b5d4c42"
     dependencies:
       async "^2.4.1"
       loader-utils "^1.1.0"
-      schema-utils "^0.3.0"
-      webpack-sources "^1.0.1"
+      schema-utils "^0.4.5"
+      webpack-sources "^1.1.0"
   
   extsprintf@1.3.0:
     version "1.3.0"
@@ -5514,7 +5533,7 @@ Lockfile:
       source-map "^0.5.6"
       supports-color "^3.2.3"
   
-  postcss@^6.0.1:
+  postcss@^6.0.1, postcss@^6.0.20:
     version "6.0.21"
     resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.21.tgz#8265662694eddf9e9a5960db6da33c39e4cd069d"
     dependencies:
@@ -6262,12 +6281,6 @@ Lockfile:
   sax@~1.2.1:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
-  
-  schema-utils@^0.3.0:
-    version "0.3.0"
-    resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
-    dependencies:
-      ajv "^5.0.0"
   
   schema-utils@^0.4.2, schema-utils@^0.4.5:
     version "0.4.5"

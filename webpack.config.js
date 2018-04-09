@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './src/index.html',
@@ -22,9 +23,23 @@ module.exports = {
       {
         test: /\.css/,
         use: [
-          'style-loader',
+          'style-loader?sourcemap=true',
           'css-loader',
-          'postcss-loader',
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              plugins: () => [
+                autoprefixer({
+                  browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9',
+                  ],
+                }),
+              ],
+            },
+          },
         ],
       },
       {
@@ -42,6 +57,6 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'styles.css',
       allChunks: true,
-    })
+    }),
   ],
 };

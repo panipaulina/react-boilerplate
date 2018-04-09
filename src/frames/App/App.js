@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import './App.sass';
 
 const App = () => (
-  <div>
+  <Fragment>
     This is it.
-  </div>
+    <button className="button">
+      dont click
+    </button>
+  </Fragment>
 );
 
 export default App;
