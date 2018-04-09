@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import * as actions from './actions';
 
 export const REDUCER_NAME = 'user';
@@ -12,3 +13,8 @@ export const userData = (state = [{
       return state;
   }
 };
+
+export default combineReducers({
+  userData,
+  // rest of user/auth reducers
+});

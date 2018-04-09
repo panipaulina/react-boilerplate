@@ -1,14 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import './App.sass';
 
-const App = () => (
-  <Fragment>
-    This is it.
-    <button className="button">
-      dont click
-    </button>
-  </Fragment>
-);
+export class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <Fragment>
+        apka :)
+      </Fragment>
+    );
+  }
+}
 
 export default App;
